@@ -1,20 +1,41 @@
-
-.arraydiv{
+.pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-}
-
-.boxdiv{
-    width: 6%;
-    text-align: center;
-    padding: 2px;
-    margin: 0px 3px;
-    border-radius: 3px;
-    background-color: rgb(167, 155, 155);
-    cursor: pointer;
-}
-
-.pageactive{
-    background-color: blueviolet;
-}
+    align-items: center;
+  }
+  
+  .boxdiv,
+  .LeftRight {
+    flex: 0 0 auto; /* Ensures items don't grow or shrink */
+    font-size: 2vw;
+    margin: 0vh 1vw;
+  }
+  
+  
+  .pageactive {
+    color: blue;
+  }
+  
+  @media screen and (max-width:512px){
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .boxdiv{
+        flex: 0 0 auto; /* Ensures items don't grow or shrink */
+        font-size: 6vw;
+        margin: 0vh 1vw;
+      }
+      .LeftRight {
+        flex: 0 0 auto; /* Ensures items don't grow or shrink */
+        font-size: 6vw;
+        margin: 0vh 1vw;
+      }
+      
+      .pageactive {
+        color: blue;
+      }
+      
+  }

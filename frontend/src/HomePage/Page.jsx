@@ -26,9 +26,9 @@ function Page() {
   return (
     <div className="mainpagediv">
       <div className="arraydiv">
-        <ReactPaginate
-          previousLabel={<FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>}
-          nextLabel={<FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>}
+        <ReactPaginate 
+          previousLabel={<FontAwesomeIcon className="LeftRight" icon={faChevronLeft}/>}
+          nextLabel={<FontAwesomeIcon className="LeftRight" icon={faChevronRight}/>}
           breakLabel={'...'}
           pageCount={totalpages}
           marginPagesDisplayed={2}
