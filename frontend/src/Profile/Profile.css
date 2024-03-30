@@ -1,0 +1,240 @@
+.profilemaindiv{
+  
+    min-height: 100vh;
+    width: 25%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    right: 0vw;
+    top: 0vh;
+    bottom: 1vh;
+    border: 2px solid blue;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.profilecontainer{
+    border-radius: 2vh;
+    background-color:white;
+    /* border: 2px solid green; */
+    width: 100%;
+    max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+  
+}
+.profilecontainer>span{
+    position: relative;
+    left: 1vw;
+    top: 2vh;
+    font-weight: 500;
+    font-size: 1.3vw;
+    cursor: pointer;
+}
+.profileimage{
+    border-radius: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 20vh;
+    /* border: 2px solid yellow; */
+  
+    
+}
+.profileimage > img {
+    max-height: 10vh;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    transition: all 0.3s ease; /* Adding a transition to all properties over 0.3 seconds with ease timing function */
+  }
+  
+  .profileimage > img:hover {
+    transform: scale(2); /* Scale the image to 110% of its original size on hover */
+  }
+.profiledetails{
+    border-radius: 2vh;
+    width: 100%;
+    min-height: 45vh;
+    /* border: 2px solid rgb(38, 0, 128); */
+    margin-top: 5vh;
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.Navlink{
+    font-weight: bold;
+    margin-bottom: 1vh;
+    font-size: large;
+    text-decoration: none;
+    color: black;
+}
+
+.profilebutton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+}
+
+.profilebutton>button{
+    width: 80%;
+    background-color: red;
+    border-radius: 1vw;
+    padding: 1vh;
+    font-size: 1.5vw;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width:512px){
+    .profilemaindiv{
+  
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        right: 0vw;
+        top: 0vh;
+        bottom: 0vh;
+        border: 2px solid blue;
+        border-radius: 0vh;
+    }    
+    .profilecontainer{
+        background-color:white;
+        /* border: 2px solid green; */
+        width: 100%;
+        max-height: 100vh;
+        
+      
+    }
+    .profilecontainer>span{
+        position: relative;
+        left: 90vw;
+        top: 2vh;
+        font-weight: 500;
+        font-size: 5vw;
+        cursor: pointer;
+        border: 2px solid green;
+    }
+    .profileimage{
+      
+        min-height: 25vh;
+      
+        
+    }
+    .profileimage > img {
+        width: 20%;
+        max-height: 28vh;
+        transition: all 0.3s ease;
+      }
+      
+      .profileimage > img:hover {
+        transform: scale(2);
+        /* Scale the image to 110% of its original size on hover */
+      }
+    .profiledetails{
+        width: 100%;
+        min-height: 40vh;
+        /* border: 2px solid rgb(38, 0, 128); */
+        margin-top: 0vh;
+    }
+    
+    
+    .profilebutton{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 30vh;
+    }
+    
+    .profilebutton>button{
+        width: 90%;
+        background-color: red;
+        border-radius: 2.5vw;
+        padding: 2vh;
+        font-size: 5vw;
+        box-sizing: border-box;
+    }
+
+}
+
+@media screen and (min-width:512px) and (max-width:1200px){
+    .profilemaindiv{
+  
+        height: 100vh;
+        width: 50%;
+        position: absolute;
+        right: 0vw;
+        top: 0.5vh;
+        bottom: 0.5vh;
+        border: 2px solid blue;
+        border-radius: 0vh;
+        border-top-left-radius: 2vh;
+        border-bottom-left-radius: 2vh;
+    }    
+    .profilecontainer{
+        background-color:white;
+        /* border: 2px solid green; */
+        width: 100%;
+        max-height: 100vh;
+        
+      
+    }
+    .profilecontainer>span{
+        position: relative;
+        left: 90%;
+        top: 2vh;
+        font-weight: 500;
+        font-size: 2vw;
+        cursor: pointer;
+        /* border: 2px solid green; */
+    }
+    .profileimage{
+      
+        min-height: 20vh;
+      
+        
+    }
+    .profileimage > img {
+        width: 20%;
+        max-height: 28vh;
+        transition: all 0.3s ease;
+      }
+      
+      .profileimage > img:hover {
+        transform: scale(2);
+        /* Scale the image to 110% of its original size on hover */
+      }
+    .profiledetails{
+        width: 100%;
+        min-height: 40vh;
+        /* border: 2px solid rgb(38, 0, 128); */
+        margin-top: 0vh;
+    }
+    
+    
+    .profilebutton{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 20vh;
+    }
+    
+    .profilebutton>button{
+        width: 80%;
+        background-color: red;
+        border-radius: 2vw;
+        padding: .7vh;
+        font-size: 2.5vw;
+        box-sizing: border-box;
+    }
+}

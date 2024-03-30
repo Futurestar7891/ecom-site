@@ -1,0 +1,48 @@
+from turtle import Turtle
+
+def draw_circle(radius):
+    tur.speed(10)  # Set the drawing speed (1 is slow, 10 is fast)
+    
+    x = radius
+    y = 0
+    P = 1 - radius  # Initial decision parameter
+
+    while x >= y:
+        # Draw the eight points using symmetry
+        tur.setpos(x, y)
+        tur.pendown()
+        tur.circle(1)
+        tur.setpos(-x, y)
+        tur.circle(1)
+        tur.setpos(x, -y)
+        tur.circle(1)
+        tur.setpos(-x, -y)
+        tur.circle(1)
+        tur.setpos(y, x)
+        tur.circle(1)
+        tur.setpos(-y, x)
+        tur.circle(1)
+        tur.setpos(y, -x)
+        tur.circle(1)
+        tur.setpos(-y, -x)
+        tur.circle(1)
+
+        y += 1
+
+        # Mid-point is inside or on the perimeter
+        if P <= 0:
+            P = P + 2*y + 1
+        # Mid-point is outside the perimeter
+        else:
+            x -= 1
+            P = P + 2*y - 2*x + 1
+
+        # If the generated point is on the line x = y, draw the symmetric point (preserving symmetry)
+        if x < y:
+            break
+
+tur = Turtle()
+
+radius = int(input("Enter the radius of the circle: "))
+draw_circle(radius)
+tur.done()

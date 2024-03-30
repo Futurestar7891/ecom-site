@@ -1,0 +1,122 @@
+.Carauselcategorymaindiv{
+    /* border: 2px solid blue; */
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    position: relative;
+    top: 9vw;
+    margin-bottom: 19vh;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (max-width:350px){
+    .Carauselcategorymaindiv{
+        /* border: 2px solid blue;
+        background-color: white; */
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100vw;
+        position: relative;
+        top: 35vw;
+        margin-bottom: 16vh;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media screen and (min-width:350px) and (max-width:512px){
+    .Carauselcategorymaindiv{
+        /* border: 2px solid blue;
+        background-color: white; */
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100vw;
+        position: relative;
+        top: 28vw;
+        margin-bottom: 18vh;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media screen and (min-width:512px) and (max-width:650px){
+    .Carauselcategorymaindiv{
+        /* border: 2px solid blue;
+        background-color: white; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100vw;
+        position: relative;
+        top: 23vw;
+        margin-bottom: 19vh;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media screen and (min-width:650px) and (max-width:800px){
+    .Carauselcategorymaindiv{
+        /* border: 2px solid blue;
+        background-color: white; */
+        display: flex;
+        justify-content: center;
+    flex-wrap: wrap;
+        width: 100vw;
+        position: relative;
+        top: 19vw;
+        margin-bottom: 19vh;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width:1000px){
+    .Carauselcategorymaindiv{
+        /* border: 2px solid blue;
+        background-color: white; */
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100vw;
+        position: relative;
+        top: 15vw;
+        margin-bottom: 19vh;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+@media screen and (min-width:1000px) and (max-width:1200px){
+    .Carauselcategorymaindiv{
+        /* border: 2px solid blue;
+        background-color: white; */
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100vw;
+        position: relative;
+        top: 12vw;
+        margin-bottom: 19vh;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+}

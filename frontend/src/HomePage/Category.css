@@ -1,0 +1,107 @@
+.categorydiv{
+    /* border: 2px solid blue; */
+    margin: 0px 5px ;
+    margin-top: 2vh;
+    display: flex;
+    gap:20px;
+    flex-direction: column;
+    align-items: center;
+    width: 10vw;
+    margin-left: 2vw;
+    
+    
+
+}
+.categorydiv > img {
+    width: 40%;
+    height: 40%; /* Adjust the height as needed */
+    border-radius: 100px; /* Adjust the border-radius as needed */
+    object-fit: cover;
+    margin-top: 10px;
+    margin-bottom: -20px;
+    aspect-ratio: 1/1;
+  }
+  .categorydiv >p{
+    margin-top: 5px;
+    font-size: large;
+  }
+
+  @media screen and (max-width: 512px){
+    .categorydiv{
+      /* border: 2px solid blue; */
+      margin: 0vw 2vw ;
+      margin-top: 1vh;
+      display: flex;
+      gap:20px;
+      flex-direction: column;
+      align-items: center;
+      width: 25vw;
+      height: 90%;
+      
+  }
+  .categorydiv > img {
+    width: 40%;
+    height: 40%; /* Adjust the height as needed */
+    border-radius: 100%; /* Adjust the border-radius as needed */
+    object-fit: cover;
+   aspect-ratio: 1/1;
+  }
+  .categorydiv >p{
+    margin-top: 1vh;
+    font-size: 3vw;
+  }
+
+}
+@media screen and (min-width: 512px) and  (max-width: 786px){
+  .categorydiv{
+    /* border: 2px solid blue; */
+    margin: 0vw 2vw ;
+    margin-top: 1vh;
+    display: flex;
+    gap:20px;
+    flex-direction: column;
+    align-items: center;
+    width: 15vw;
+    height: 80%;
+    
+}
+.categorydiv > img {
+  width: 50%;
+  height: 50%; /* Adjust the height as needed */
+  border-radius: 100%; /* Adjust the border-radius as needed */
+  object-fit: cover;
+  margin-top: 10px;
+  margin-bottom: -20px;
+  aspect-ratio: 1/1;
+}
+.categorydiv >p{
+  margin-top: 1vh;
+  font-size: 2vw;
+}
+
+}
+@media screen and (min-width: 786px) and  (max-width: 1200px){
+  .categorydiv{
+    /* border: 2px solid blue; */
+    margin: 0vw 2vw ;
+    margin-top: 2vh;
+    display: flex;
+    gap:20px;
+    flex-direction: column;
+    align-items: center;
+    width: 15vw;
+    height: 80%;
+    
+}
+.categorydiv > img {
+  width: 40%;
+  height: 50%; /* Adjust the height as needed */
+  border-radius: 100%; /* Adjust the border-radius as needed */
+  object-fit: cover;
+ aspect-ratio: 1/1;
+}
+.categorydiv >p{
+  margin-top: 1vh;
+  font-size: 2vw;
+}
+}

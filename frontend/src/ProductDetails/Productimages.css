@@ -1,0 +1,42 @@
+
+.Productimgmaindiv{
+    border: 2px solid green;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.Productimgdiv{
+    border: 2px solid blue;
+    width: 90%;
+    min-height: 90%;
+   
+}
+.Productimg{
+   align-self: center;
+   width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  
+    
+}
+
+@media screen and (max-width:512px){
+    
+    .Productimgdiv{
+        border: 2px solid blue;
+        width: 95%;
+        min-height: 90%;
+       
+    }
+    .Productimg{
+        align-self: center;
+       max-width: 100%;
+       max-height: 90vh;
+       object-fit: contain;
+        
+    }
+}

@@ -1,0 +1,12 @@
+
+
+.Filters{
+    position: relative;
+    top: 16vh;
+    height: 8vh;
+    /* border: 2px solid blue; */
+    width: 100vw;
+    margin-bottom: 20vh;
+    display: flex;
+    justify-content: flex-start;
+}

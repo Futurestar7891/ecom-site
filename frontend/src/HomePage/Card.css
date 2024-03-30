@@ -1,0 +1,118 @@
+.Cardmaindiv {
+    display: flex;
+    flex-direction: column;
+    width: 18vw;
+    height: fit-content;
+    margin-top: 2vh;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border: 2px solid black;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color:white;
+  }
+  .Cardimgdiv{
+    width: 100%;
+    height: 30vh;
+  }
+  .Cardimgdiv>img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .Cardbodydiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 1vh;
+    margin-left: 1vw;
+  }
+  .Cardbodydiv>button{
+    width: 80%;
+    align-self: center;
+    background-color: lightgreen;
+    margin: 1vh 0vh;
+  }
+  
+  .Card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media screen and (max-width:512px){
+    .Cardmaindiv {
+        display: flex;
+        flex-direction: column;
+        width: 95vw;
+        height: fit-content;
+        margin-top: 2vh;
+        margin-bottom: 10px;
+        text-decoration: none;
+        border: 2px solid black;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+     
+      .Cardbodydiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 1vh;
+        margin-left: 1vw;
+      }
+  }
+
+  @media screen and (min-width:512px) and (max-width:786px){
+    .Cardmaindiv {
+        display: flex;
+        flex-direction: column;
+        width: 45vw;
+        height: fit-content;
+        margin-top: 2vh;
+        margin-bottom: 10px;
+        text-decoration: none;
+        border: 2px solid black;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .Cardbodydiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 1vh;
+        margin-left: 1vw;
+      }
+  }
+
+  @media screen and (min-width:786px) and (max-width:912px){
+    .Cardmaindiv {
+        display: flex;
+        flex-direction: column;
+        width: 32vw;
+        height: fit-content;
+        margin-top: 2vh;
+        margin-bottom: 10px;
+        text-decoration: none;
+        border: 2px solid black;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .Cardbodydiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 1vh;
+        margin-left: 1vw;
+      }
+      
+  }
+
+  @media screen and (min-width:912px){
+    .Cardmaindiv {
+        display: flex;
+        flex-direction: column;
+        width: 20vw;
+        height: fit-content;
+        margin-top: 2vh;
+        margin-bottom: 10px;
+        text-decoration: none;
+        border: 2px solid black;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+    }

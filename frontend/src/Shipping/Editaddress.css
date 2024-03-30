@@ -1,0 +1,219 @@
+.ShippingddressEditmaindiv{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    border: 2px solid yellow;
+}
+.ShippingaddressEditcontainer{
+    width: 40%;
+    min-height: 90vh;
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:#5FBDFF;
+    border-radius: 2vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
+
+
+.ShippingaddressEditpage{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    background-color:white;
+    width: 90%;
+    min-height: 80vh;
+    border-radius: 2vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    border: 2px solid red;
+    
+  
+}
+.ShippingaddressEditpage>form{
+    width: 100%;
+    border-radius: 2vh;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid green;
+
+}
+.AddressEditinputdiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid green; */
+    min-height: 10vh;
+    
+    align-items: center;
+    
+}
+.AddressEditinputdiv>input{
+    width: 45%;
+    height: 60%;
+    padding: 1vh;
+    border-radius: .5vw;
+    font-size: 1.3vw;
+    font-weight: dark;
+    font-style: oblique;
+    background-color:white;
+    
+}
+.AddressEditinputdiv>select{
+    width: 28%;
+    height: 60%;
+    padding: 1vh;
+    font-size: 1.3vw;
+    background-color:white;
+}
+
+.AddressEditinputdiv>button{
+    width: 30%;
+    padding: 1vh;
+    font-size: 1.3vw;
+    background-color: lightgreen;
+    font-weight: dark;
+    font-style: oblique;
+    border-radius: .5vw;
+
+
+}
+
+
+@media screen and (max-width:512px){
+    
+    .ShippingddressEditmaindiv{
+        width: 100vw;
+      height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    border: 2px solid yellow;
+       
+    }
+    .ShippingaddressEditcontainer{
+        width: 95%;
+        height: 95vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    
+    
+    .ShippingaddressEditpage{
+        width: 100%;
+        min-height: 95vh;
+
+      
+    }
+    .ShippingaddressEditpage>form{
+        width: 100%;
+        min-height: 95vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    
+    }
+
+    
+    .AddressEditinputdiv{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid green;
+        
+    }
+    .AddressEditinputdiv>input{
+        width: 90%;
+        margin: 1.3vh 0vw;
+        border-radius: 1vw;
+        font-size: 3.5vw;
+        
+    }
+    .AddressEditinputdiv>select{
+        width: 90%;
+        margin: 1.3vh 0vw;
+        padding: 1vh;
+        font-size: 1.3vw;
+        background-color:white;
+    }
+    .AddressEditinputdiv>button{
+        width: 90%;
+        margin: 1.3vh 0vw;
+        padding: 1vh;
+        font-size: 4vw;
+        border-radius: 1vw;
+    
+    
+    }
+}
+
+@media screen and (min-width:512px) and (max-width:786px){
+
+   
+    .ShippingddressEditmaindiv{
+        align-items: center;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border: 2px solid blue;
+        background-color: #98ABEE;
+    }
+    .ShippingaddressEditcontainer{
+        margin-top: 4vh;
+        width: 95%;
+        /* border: 2px solid green; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
+    .ShippingaddressEditpage{
+        width: 95%;
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+
+      
+    }
+    .ShippingaddressEditpage>form{
+        width: 100%;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+    
+    }
+    .Addressinputdiv>input{
+        width: 48%;
+        height: 60%;
+        border-radius: 1vw;
+        font-size: 3vw;
+        
+    }
+    .AddressEditinputdiv>button{
+        width: 40%;
+        padding: 1vh;
+        font-size: 2.5vw;
+        border-radius: 1vw;
+    
+    
+    }
+}
+

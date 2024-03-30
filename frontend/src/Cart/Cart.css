@@ -1,0 +1,428 @@
+/* It is the class of Confirmproduct i am writing here ok */
+.Subtotalandaddress{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 30vh;
+    margin-top: 2vh;
+    background-color: #646363;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+}
+.finalshipaddress{
+    /* border: 2px solid red; */
+    width: 33%;
+    min-height: 30vh;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.finalsubtotal{
+    /* border: 2px solid red; */
+    width: 33%;
+    min-height: 30vh;
+    text-align: left;
+    font-size: 2vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.ConfirmProduct{
+    /* border: 2px solid red; */
+    width: 33%;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    
+}
+.ConfirmProduct>button{
+    width: 70%;
+    font-size: 2vw;
+    border-radius: .5vw;
+    padding: 1vh;
+    background-color: lightgreen;
+    color: white;
+    font-weight: 500;
+}
+.Cartmaindiv{
+    color: white;
+    font-weight: bolder;
+    background-color: #454545;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* Here is end of the confirm product css */
+
+
+
+.Cartcontainer{
+    width: 90%;
+    margin-bottom: 10vh;
+    /* border: 2px solid red; */
+
+}
+.Cartbody{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Cartproducts{
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background-color: #454545;
+    width: 95%;
+    height:10rem ;
+   
+    margin-top: 2%;
+    margin-left: 2%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+
+    
+}
+.cartimagediv{
+   
+    width: 10%;
+    height: 100%;
+}
+.cartimagediv>img{
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    border-radius: 15px;
+}
+.cartproductname,.cartinput,.cartprice,.cartdelete{
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartproductname{
+    width: 25%;
+    font-size: larger;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cartinput{
+    width: 20%;
+ 
+}
+.cartprice{
+    width: 10%;
+    font-size: larger;
+    
+}
+.buybtn{
+    color: rgb(141, 47, 255);
+}
+.cartinput>select{
+    margin: 0px 5%;
+    width: 40%;
+    border: none;
+    outline: none;
+    background-color: #454545;
+    text-align: center;
+    color: white;
+    font-size: larger;
+    font-style: bolder;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;}
+
+.cartdelete{
+    width: 10%;
+    font-size: larger;
+}
+.Buy>button{
+    width: 50%;
+    border-radius: 15px;
+    background-color: #d67a7a;
+    color: rgb(7, 3, 3);
+    font-weight: bold;
+  
+}
+.nocart{
+    background-color:#454545;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: xx-large;
+    width: 100%;
+    height: 100vh;
+}
+
+.Carticon{
+    font-size: larger;
+    cursor: pointer;
+}
+.subtotal{
+    height: 10vh;
+    margin-top: 2%;
+    display: flex;
+    border: 2px solid blue;
+    align-items: center;
+    background-color: lightgreen;
+}
+.subtotal>div{
+    width: 50%;
+    text-align: center;
+    font-size: x-large;
+    color: black;
+
+}
+.subtotal>div>button{
+    background-color: rgb(49, 193, 61);
+    color: white;
+    font-size: large;
+    border-radius: 1rem;
+    padding: 2%;
+
+}
+
+@media screen and (max-width:512px){
+
+    /* It is the class of Confirmproduct i am writing here ok */
+.Subtotalandaddress{
+    /* border: 2px solid red; */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.finalshipaddress{
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.finalsubtotal{
+    /* border: 2px solid red; */
+    width: 100%;
+    max-height: 5vh;
+    font-size: 7vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.ConfirmProduct{
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.ConfirmProduct>button{
+    width: 80%;
+    font-size: 6vw;
+    border-radius: 1vw;
+    padding: 1.5vh;
+    background-color: lightgreen;
+    color: white;
+    font-weight: 500;
+}
+/* Here is end of the confirm product css */
+
+.Cartmaindiv{
+    color: white;
+    font-weight: bolder;
+    background-color: #454545;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+    .Cartcontainer{
+        width: 100%;
+        margin-bottom: 10vh;
+    
+    }
+    .cartimagediv{
+   
+        width: 50%;
+        height: 100%;
+    }
+
+    .Cartbody{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+    }
+    .cartproductname{
+        width: 100%;
+        font-size: 4vw;
+       display: flex;
+
+        
+        
+    }
+    .cartinput{
+        width: 80%;
+        align-self: center;
+     
+    }
+    .cartinput>select{
+        width: 40%;
+        text-align: center;
+        font-size: larger;
+     }
+     .cartdelete{
+        width: 90%;
+        background-color: rgb(242, 104, 104);
+        margin-bottom: 1vh;
+        border-radius: 10px;
+        font-size: larger;
+    }
+
+    .subtotal>div>button{
+        background-color: rgb(49, 193, 61);
+        color: rgb(10, 0, 0);
+        font-size: large;
+        border-radius: .7rem;
+        padding: 3%;
+    
+    }
+}
+
+@media screen and (min-width:512px) and (max-width:786px){
+
+        /* It is the class of Confirmproduct i am writing here ok */
+.Subtotalandaddress{
+    /* border: 2px solid red; */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.finalshipaddress{
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.finalsubtotal{
+    /* border: 2px solid red; */
+    width: 100%;
+    max-height: 5vh;
+    font-size: 7vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.ConfirmProduct{
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.ConfirmProduct>button{
+    width: 80%;
+    font-size: 6vw;
+    border-radius: 1vw;
+    padding: 1.5vh;
+    background-color: lightgreen;
+    color: white;
+    font-weight: 500;
+}
+/* Here is end of the confirm product css */
+
+    .Cartproducts{
+        height:15rem
+    }
+    .Cartcontainer{
+        width: 100%;
+        margin-bottom: 10vh;
+    
+    }
+    .cartimagediv{
+   
+        width: 50%;
+        height: 100%;
+    }
+
+    .Cartbody{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+    }
+    .cartproductname{
+        width: 100%;
+        font-size: 4vw;
+       display: flex;
+
+        
+        
+    }
+    .cartinput{
+        width: 80%;
+        align-self: center;
+     
+    }
+    .cartinput>select{
+        margin: 0px 5%;
+        width: 30%;
+        text-align: center;
+        font-size: larger;
+     }
+     .cartdelete{
+        width: 90%;
+        background-color: rgb(242, 104, 104);
+        margin-bottom: 1vh;
+        border-radius: 10px;
+        font-size: larger;
+    }
+    .subtotal>div>button{
+        background-color: rgb(49, 193, 61);
+        color: rgb(10, 0, 0);
+        font-size: large;
+        border-radius: .7rem;
+        padding: 3%;
+    
+    }
+}
+@media screen and (min-width:786px) and (max-width:1200px){
+    .cartimagediv{
+   
+        width: 30%;
+        height: 100%;
+    }
+    .cartinput{
+        width: 25%;
+        align-self: center;
+     
+    }
+    .subtotal>div>button{
+        background-color: rgb(49, 193, 61);
+        color: rgb(10, 0, 0);
+        font-size: large;
+        border-radius: .7rem;
+        padding: 3%;
+    
+    }
+}

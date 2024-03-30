@@ -1,0 +1,219 @@
+
+.producthomeheading {
+  margin-top: 1vh;
+  text-align: center;
+}
+.recenthomeheading {
+  margin-top: 2vh;
+  text-align: center;
+  margin-bottom: 2vh;
+  font-size: 2vw;
+}
+
+.producthomeunderline {
+  margin-top: -50px;
+  width: 20%;
+  margin: auto;
+  background-color: black;
+}
+.Categoryhomediv {
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 18vh;
+  position: relative;
+  top: 16vh;
+  margin-bottom: 4vh;
+  flex-wrap: nowrap;
+  background-color:white;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Recentvisitdiv {
+  display: flex;
+  justify-content: flex-start;
+  max-height: 70vh;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Cardhomediv {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2vh;
+  flex-wrap: wrap;
+  border: 2px solid green;
+  width: 100vw;
+}
+.shimmer {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  
+  background: linear-gradient(to right, transparent 0%, #c02525 50%, transparent 100%);
+  animation: shimmer 4s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+      left: -100%;
+     
+  }
+  100% {
+      left: 100%;
+      
+  }
+}
+@media screen and (max-width: 512px){
+
+  .producthomeheading{
+    margin-top: 1vh;
+   }
+
+  .Cardhomediv {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+    flex-wrap: wrap;
+    border: 2px solid green;
+    width: 100vw;
+  }
+ 
+  .Categoryhomediv {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 14vh;
+    position: relative;
+    top: 13vh;
+    margin-bottom: 8vh;
+    flex-wrap: nowrap;
+    background-color: #f6f5f5;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .HomeStartdiv{
+    height: 25vh;
+    width: 100vw;
+    
+  }
+  .recenthomeheading {
+    font-size: 2.5vw;
+    margin-top: 2vh;
+    text-align: center;
+  }
+  .Recentvisitdiv {
+    
+    display: flex;
+    justify-content: flex-start;
+    height: fit-content;
+    width:100vw;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media screen and (min-width: 512px) and  (max-width: 786px){
+  .producthomeheading{
+    margin-top: 2vh;
+   }
+ 
+  .Cardhomediv {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 6vh;
+    flex-wrap: wrap;
+    border: 2px solid green;
+    width: 100vw;
+  }
+  .Categoryhomediv {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 16vh;
+    position: relative;
+    top: 16vh;
+    margin-bottom: 5.5vh;
+    flex-wrap: nowrap;
+    background-color: #f6f5f5;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .HomeStartdiv{
+    height:45vh;
+    width: 100vw;
+  }
+  .recenthomeheading {
+    font-size: 2vw;
+    margin-top: 2vh;
+    text-align: center;
+  }
+  .Recentvisitdiv {
+    
+    display: flex;
+    justify-content: flex-start;
+    height: fit-content;
+    width:100vw;
+    border: 2px solid blue;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media screen and (min-width: 786px) and  (max-width: 1200px){
+  .producthomeheading{
+    margin-top: 1vh;
+   }
+  .recenthomeheading {
+    font-size: 2vw;
+    margin-top: 2vh;
+    text-align: center;
+  }
+  .Recentvisitdiv {
+    
+    display: flex;
+    justify-content: flex-start;
+    height:fit-content;
+    width:100vw;
+    margin-bottom: 10vh;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+ 
+  .Categoryhomediv {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 18vh;
+    position: relative;
+    top: 16vh;
+    margin-bottom: 4vh;
+    flex-wrap: nowrap;
+    background-color: #f6f5f5;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+}

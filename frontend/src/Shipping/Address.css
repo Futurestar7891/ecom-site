@@ -1,0 +1,84 @@
+.Addressmaindiv{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.Addresscontainer{
+    width: 90%;
+    border: 2px solid blue;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+.Addressproccess{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2vh 0vw;
+    /* border: 2px solid green; */
+}
+.Addressproccessicons{
+    font-size: 1.5vw;
+
+}
+
+.Addresspage{
+    /* border: 2px solid green; */
+    width: 25%;
+    color: white;
+    background-color:#512D6D;
+    box-shadow: rgb(241, 245, 248) 0px 20px 30px -10px;
+    margin: 2vh 2vh;
+}
+.Addresspage:hover{
+    box-shadow: rgb(86, 88, 90) 0px 20px 30px -10px;
+    background-color: rgb(237, 114, 239);
+}
+.Addresspage>form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+}
+.Addresspage>form>span{
+    line-height: 1vh;
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin-top: 1.5vh;
+    font-size: 1.4vw;
+    cursor: pointer;
+
+    
+}
+.Addresspage>form>span:hover{
+    color: red;
+}
+.Addressinputdiv{
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.Addressinputdiv>p{
+    font-size: 1vw;
+    margin-left: 1vw;
+}
+
+.Addressinputdiv>button{
+    width: 80%;
+    align-self: center;
+    padding: 1vh;
+    font-size: 1vw;
+    margin: 1.5vh 0vw;
+    border-radius: 1vw;
+    font-weight: 500;
+    background-color: lightgreen;
+}

@@ -1,0 +1,361 @@
+
+.reviewmaindiv{
+    /* border:2px solid green; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.reviewcontainer{
+    /* border: 2px solid red; */
+    
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 2%;
+    background-color:#11235A;
+    color: white;
+}
+
+.reviewtop{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid blue; */
+    margin: 0vh 1vw;
+    padding: 2vh;
+}
+.reviewtop>span{
+   font-size: 1vw;
+   font-weight: 500;
+   cursor: pointer;
+}
+
+.reviewunderline{
+    width: 70%;
+    align-self: center;
+    color:white;
+   
+    
+}
+
+.Reviewheading{
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid green; */
+    justify-content: flex-start;
+    
+
+   
+}
+
+.Reviewheading>h2,.Reviewheading>p{
+
+    width: 100%;
+    text-align: center;
+    /* border: 2px solid blue; */
+    overflow-wrap: break-word;
+    
+}
+.Reviewrating{
+    width: 100%;
+    min-height: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid green; */
+}
+
+.ReviewStars{
+    font-size: 3vw;
+}
+
+.reviewbox{
+    /* border: 2px solid red; */
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  
+}
+
+.reviewbox>textarea{
+    width: 60%;
+    min-height: 20vh;
+    padding: 10px; /* Adjust the padding as needed */
+    box-sizing: border-box; 
+   
+}
+.submitReview{
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 10vh;
+margin:1vh 0vh
+
+}
+
+.submitReview>button{
+    width: 50%;
+    padding: 1vh;
+    background-color: red;
+    border-radius: 1vw;
+    font-size: 2vw;
+}
+
+@media screen and (max-width:512px){
+    .reviewmaindiv{
+        /* border:2px solid green; */
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .reviewcontainer{
+        /* border: 2px solid red; */
+        display: flex;
+        flex-direction: column;
+        width: 98%;
+        min-height: 80%;
+        border-radius: 2%;
+        background-color:#11235A;
+       color: white;
+    }
+    
+    .reviewtop{
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 2px solid blue; */
+        margin: 0vh 1vw;
+    }
+    .reviewtop>span{
+       font-size: 4vw;
+       font-weight: 500;
+       cursor: pointer;
+    }
+    
+    .reviewunderline{
+        width: 80%;
+        align-self: center;
+        color:white;
+       
+        
+    }
+    
+    .Reviewheading{
+        width: 100%;
+        min-height: 10vh;
+        display: flex;
+        flex-direction: column;
+        /* border: 2px solid green; */
+        justify-content: flex-start;
+        
+    
+       
+    }
+    
+    .Reviewheading>h2,.Reviewheading>p{
+    
+        width: 100%;
+        font-size: 4vw;
+        text-align: center;
+        /* border: 2px solid blue; */
+        overflow-wrap: break-word;
+        
+    }
+    .Reviewrating{
+        width: 100%;
+        min-height: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* border: 2px solid green; */
+    }
+    
+    .ReviewStars{
+        font-size: 4vw;
+    }
+    
+    .reviewbox{
+        /* border: 2px solid red; */
+        width: 100%;
+        min-height: 25vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+      
+    }
+    
+    .reviewbox>textarea{
+        width: 95%;
+        min-height: 20vh;
+        padding: 10px; /* Adjust the padding as needed */
+        box-sizing: border-box; 
+       
+    }
+    .submitReview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    margin:1vh 0vh;
+    /* border:2px solid blue */
+
+    
+    }
+    
+    .submitReview>button{
+        width: 70%;
+        padding: 2vh;
+        /* background-color: red; */
+        border-radius: 1vw;
+        font-size: 4vw;
+    }
+    
+    .ReviewStars{
+        font-size: 1vw;
+    }
+}
+
+@media screen and (min-width:512px) and (max-width:786px){
+    .reviewmaindiv{
+        /* border:2px solid green; */
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .reviewcontainer{
+        /* border: 2px solid red; */
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        min-height: 80%;
+        border-radius: 2%;
+        background-color:#11235A;
+    color: white;
+    }
+    
+    .reviewtop{
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 2px solid blue; */
+        margin: 0vh 1vw;
+    }
+    .reviewtop>span{
+       font-size: 4vw;
+       font-weight: 500;
+       cursor: pointer;
+    }
+    
+    .reviewunderline{
+        width: 80%;
+        align-self: center;
+        color:white;
+       
+        
+    }
+    
+    .Reviewheading{
+        width: 100%;
+        min-height: 10vh;
+        display: flex;
+        flex-direction: column;
+        /* border: 2px solid green; */
+        justify-content: flex-start;
+        
+    
+       
+    }
+    
+    .Reviewheading>h2,.Reviewheading>p{
+    
+        width: 100%;
+        font-size: 4vw;
+        text-align: center;
+        /* border: 2px solid blue; */
+        overflow-wrap: break-word;
+        
+    }
+    .Reviewrating{
+        width: 100%;
+        min-height: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* border: 2px solid green; */
+    }
+    
+    .ReviewStars{
+        font-size: 4vw;
+    }
+    
+    .reviewbox{
+        /* border: 2px solid red; */
+        width: 100%;
+        min-height: 25vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+      
+    }
+    
+    .reviewbox>textarea{
+        width: 95%;
+        min-height: 20vh;
+        padding: 10px; /* Adjust the padding as needed */
+        box-sizing: border-box; 
+       
+    }
+    .submitReview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    margin:1vh 0vh;
+    /* border:2px solid blue */
+
+    
+    }
+    
+    .submitReview>button{
+        width: 70%;
+        padding: 1vh;
+        background-color: red;
+        border-radius: 1vw;
+        font-size: 4vw;
+    }
+    
+    .ReviewStars{
+        font-size: 1vw;
+    }
+}
+
