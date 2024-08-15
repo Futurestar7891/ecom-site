@@ -1,12 +1,12 @@
 const app = require("./app");
 const dotenv = require("dotenv");
-const connection = require("../backend/database/database");
+const connection = require("./database/database");
 
 // Database connection
 connection();
 
 // Load environment variables
-dotenv.config({ path: "backend/config/config.env" });
+dotenv.config({ path: "./config/config.env" });
 
 const PORT = process.env.PORT;
 
