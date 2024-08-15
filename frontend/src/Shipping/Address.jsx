@@ -1,32 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import './Address.css'
+import "./Address.css";
 import {
   faBuildingColumns,
   faCheck,
   faTruck,
 } from "@fortawesome/free-solid-svg-icons";
-// import { useState } from "react"
 
 import "./Address.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-  createaddress,
-  deleteaddress,
-  getaddress,
-} from "../Redux/Addresses";
+import { createaddress, deleteaddress, getaddress } from "../Redux/Addresses";
 import { getshippingaddress } from "../Redux/Shippingaddress";
 import { useEffect } from "react";
 import { updateshippingaddress } from "../Redux/Shippingaddress";
 function Address() {
   const dispatch = useDispatch();
   const Address = useSelector((state) => state.Address.Address);
-  const message=useSelector((state)=>state.Address.message);
-  const error=useSelector((state)=>state.Address.error);
-  console.log(error)
-  console.log("jhkjsdhfkjdsfd",message);
+  console.log(Address, "is here");
+  const error = useSelector((state) => state.Address.error);
+  console.log("errors are here", error);
+
   const [Value, setValue] = useState({
     Name: "",
     Email: "",
@@ -41,39 +36,44 @@ function Address() {
 
   const navigate = useNavigate();
 
-  const handleInput=(e)=>{
-      const {name,value}=e.target
-      setValue({...Value,[name]:value})
-  }
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setValue({ ...Value, [name]: value });
+  };
 
   useEffect(() => {
     try {
       dispatch(getaddress({ Userid: localStorage.getItem("id") }));
     } catch (error) {
-      console.log("the problem is in getting the address")
+      console.log("the problem is in getting the address");
     }
-   
-    }, [dispatch]);
-
+  }, [dispatch]);
 
   const submitaddress = (e) => {
     e.preventDefault();
     dispatch(
-      createaddress({Email:Value.Email,Name:Value.Name,Mobile:Value.Mobile,Altermobile:Value.Mobile,Pincode:Value.Pincode,
-      Userid:localStorage.getItem("id") })
-    ).then(()=>{
-      dispatch(getaddress({ Userid: localStorage.getItem("id") }));
-    })
-    .catch((error) => {
-      console.error("Error getting address:", error);
-      // Handle error if needed
-    });
+      createaddress({
+        Email: Value.Email,
+        Name: Value.Name,
+        Mobile: Value.Mobile,
+        Altermobile: Value.Mobile,
+        Pincode: Value.Pincode,
+        Userid: localStorage.getItem("id"),
+      })
+    )
+      .then(() => {
+        dispatch(getaddress({ Userid: localStorage.getItem("id") }));
+      })
+      .catch((error) => {
+        console.error("Error getting address:", error);
+        // Handle error if needed
+      });
   };
 
-  const Editaddress=(idx)=>{
-    console.log(idx,"the index is")
-      navigate(`/Editaddress/${idx}`)
-  }
+  const Editaddress = (idx) => {
+    console.log(idx, "the index is");
+    navigate(`/Editaddress/${idx}`);
+  };
   const Removeaddress = (idx) => {
     dispatch(deleteaddress({ Userid: localStorage.getItem("id"), Index: idx }))
       .then(() => {
@@ -84,50 +84,69 @@ function Address() {
         // Handle error if needed
       });
   };
-  
-  const Usefordelivery=(idx)=>{
-      dispatch(updateshippingaddress({Index:idx,Userid:localStorage.getItem("id")}))
-      .then(()=>{
-        dispatch(getshippingaddress({Userid:localStorage.getItem("id")}))
-      })
-      .catch(()=>{
-        console.error("Error deleting");
-      })
-      navigate("/Confirmorder");
-  }
- 
-  const Addnewaddress=()=>{
-     navigate('/Editaddress');
-  }
 
-  
+  const Usefordelivery = (idx) => {
+    dispatch(
+      updateshippingaddress({ Index: idx, Userid: localStorage.getItem("id") })
+    )
+      .then(() => {
+        dispatch(getshippingaddress({ Userid: localStorage.getItem("id") }));
+      })
+      .catch(() => {
+        console.error("Error deleting");
+      });
+    navigate("/Confirmorder");
+  };
+
+  const Addnewaddress = () => {
+    navigate("/Editaddress");
+  };
 
   return (
-    <div className="Addressmaindiv" style={{backgroundColor:"#DFF5FF"}}>
-       <div className="Addressproccess">
-          <FontAwesomeIcon className="Addressproccessicons" style={{color:"red"}}icon={faTruck} />
-          <hr style={{width:"40%",border:"1px solid black"}} />
-          <FontAwesomeIcon className="Addressproccessicons"icon={faCheck} />
-          <hr style={{width:"40%",border:"1px solid black"}}/>
-          <FontAwesomeIcon className="Addressproccessicons"icon={faBuildingColumns} />
-        </div>
+    <div className="Addressmaindiv" style={{ backgroundColor: "#DFF5FF" }}>
+      <div className="Addressproccess">
+        <FontAwesomeIcon
+          className="Addressproccessicons"
+          style={{ color: "red" }}
+          icon={faTruck}
+        />
+        <hr style={{ width: "40%", border: "1px solid black" }} />
+        <FontAwesomeIcon className="Addressproccessicons" icon={faCheck} />
+        <hr style={{ width: "40%", border: "1px solid black" }} />
+        <FontAwesomeIcon
+          className="Addressproccessicons"
+          icon={faBuildingColumns}
+        />
+      </div>
       <div className="Addresscontainer">
-       
-        {Address.length > 0 ? (
+        {Address && Address.length > 0 ? (
           Address.map((address, idx) => {
             return (
               <div className="Addresspage" key={idx}>
                 <form action="">
-                  <span onClick={()=>Removeaddress(idx)}>X</span>
+                  <span onClick={() => Removeaddress(idx)}>X</span>
                   <div className="Addressinputdiv">
-                    <p><strong>{address.Name}</strong></p>
-                    <p>{address.House},{address.City } { address.Pincode}</p>
-                    <p>{address.State},{address.Country}</p>
-                   <p><strong>Mobile :</strong>{address.Mobile}</p>
+                    <p>
+                      <strong>{address.Name}</strong>
+                    </p>
+                    <p>
+                      {address.House},{address.City} {address.Pincode}
+                    </p>
+                    <p>
+                      {address.State},{address.Country}
+                    </p>
+                    <p>
+                      <strong>Mobile :</strong>
+                      {address.Mobile}
+                    </p>
                   </div>
                   <div className="Addressinputdiv">
-                    <button onClick={()=>Editaddress(idx)}>Edit Address</button>
-                    <button onClick={()=>Usefordelivery(idx)}>Use this for delivery</button>
+                    <button onClick={() => Editaddress(idx)}>
+                      Edit Address
+                    </button>
+                    <button onClick={() => Usefordelivery(idx)}>
+                      Use this for delivery
+                    </button>
                   </div>
                 </form>
               </div>
@@ -205,17 +224,17 @@ function Address() {
                 />
               </div>
               <div className="AddressEditinputdiv">
-                <button type="reset">
-                  Reset
-                </button>
+                <button type="reset">Reset</button>
                 <button type="submit">Use this Address</button>
               </div>
             </form>
           </div>
         )}
       </div>
-      {Address.length > 0 ? (
-        <button onClick={Addnewaddress} className="Addaddress">Add a New Address?</button>
+      {Address && Address.length > 0 ? (
+        <button onClick={Addnewaddress} className="Addaddress">
+          Add a New Address?
+        </button>
       ) : (
         ""
       )}

@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
+const apiKey =import.meta.env.VITE_APP_URL
 export const changepassword = createAsyncThunk(
   'changepassword/changepassword',
   async ({Email="",Password=""}) => {
     try {
        console.log("hello")
-       const response = await fetch("http://localhost:3000/api/newpassword", {
+       const response = await fetch(`${apiKey}/newpassword`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

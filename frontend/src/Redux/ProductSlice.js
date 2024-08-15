@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
+const apiKey =import.meta.env.VITE_APP_URL
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async ({ page = 1, keyword = "",minprice=0,maxprice=50000,brand="",color="",size="",rating=0 }={}) => {
     try {
-      const url=`http://localhost:3000/api/getallproduct?page=${page}&keyword=${keyword}&minprice=${minprice}&maxprice=${maxprice}
+      const url=`${apiKey}/getallproduct?page=${page}&keyword=${keyword}&minprice=${minprice}&maxprice=${maxprice}
       &brand=${brand}&color=${color}&size=${size}&rating=${rating}`
       const response = await fetch(url);
       const data = await response.json();

@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
+const apiKey =import.meta.env.VITE_APP_URL
 export const verifyotp = createAsyncThunk(
   'verifyotp/verifyotp',
   async ({Email="",OTP=""}) => {
     try {
        console.log("hello")
-       const response = await fetch("http://localhost:3000/api/verifyotp", {
+       const response = await fetch(`${apiKey}/verifyotp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

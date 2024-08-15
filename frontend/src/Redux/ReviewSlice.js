@@ -1,12 +1,12 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
-
+const apiKey =import.meta.env.VITE_APP_URL
 export const Submitreview=createAsyncThunk(
     'Review/submitreview',
     async({Rating,Comment,Productid,Userid,Img})=>{
         console.log("enterd in the slice",Productid)
 
         try {
-            const response=await fetch("http://localhost:3000/api/reviewproducts",{
+            const response=await fetch(`${apiKey}/reviewproducts`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"

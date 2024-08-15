@@ -1,11 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SubmitReview from "./Submitreview";
-import {
-  faInr,
-} from "@fortawesome/free-solid-svg-icons";
+import { faInr } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -18,12 +16,12 @@ import { useNavigate } from "react-router-dom";
 import { setProduct } from "../Redux/BuyproductSlice";
 
 const ProductDetails = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const useref = useRef(null);
   const dispatch = useDispatch();
   const { _id } = useParams();
   const [productdetails, setProductDetails] = useState(null);
-  const [showreview,setshowreview]=useState(false);
+  const [showreview, setshowreview] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -37,7 +35,6 @@ const ProductDetails = () => {
       } catch (error) {
         console.error("Error fetching product details:", error);
       }
-      
     };
 
     fetchProduct();
@@ -52,35 +49,32 @@ const ProductDetails = () => {
       Id: productdetails._id,
       Price: productdetails.Price,
     };
-    const Token=localStorage.getItem("Token")
-    if(Token!=null){
+    const Token = localStorage.getItem("Token");
+    if (Token != null) {
       dispatch(
         addToCart({ Cartdata: Cartdata, Userid: localStorage.getItem("id") })
       );
+    } else {
+      alert("please login first");
     }
-    else{
-      alert("please login first")
-    }
-    
   };
 
-  const Reviewbutton=()=>{
-    setshowreview(true)
-    window.scrollTo({
-      top: useref.current.offsetTop,
-      behavior: "smooth"
-    });
-  }
+  const Reviewbutton = (ref) => {
+    setshowreview(true);
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
 
-  const Buynow=()=>{
-    dispatch(setProduct({
-      Name: productdetails.Name,
-      Quantity: 1,
-      Img: productdetails.Images[0],
-      Price: productdetails.Price,
-    }))
-    navigate(`/Shippingdetails`)
-  }
+  const Buynow = () => {
+    dispatch(
+      setProduct({
+        Name: productdetails.Name,
+        Quantity: 1,
+        Img: productdetails.Images[0],
+        Price: productdetails.Price,
+      })
+    );
+    navigate(`/Shippingdetails`);
+  };
 
   // Define settings for the carousel
   const settings = {
@@ -98,7 +92,7 @@ const ProductDetails = () => {
     activeColor: "orange",
     color: "#CCCCCC",
     isHalf: true,
-    size:20,
+    size: 20,
   };
 
   const reviewsCount = productdetails
@@ -116,86 +110,87 @@ const ProductDetails = () => {
       {productdetails && (
         <div className="Productdetailcontainer">
           <div className="Productdetaildiv">
-          <div className="Productdetailimages">
-           
-           
-           <NavLink className="Productdetaillink" to={`/Productimages/${_id}`}>
-           <Slider {...settings}>
-            {productdetails.Images.map((image, index) => (
-              
-                <img className="Productdetailimg"key={index} src={image.URL} alt={`Product Image ${index + 1}`} />
-              
-            ))}</Slider>
-            </NavLink>
-          
-        </div>
-        <div className="Productdetails">
-          <div className="Prouductdetailnameandrating" >
-          <div className="Productdetailname"><strong>Name:</strong>{productdetails.Name}</div>
-            <div className="Productdetailrating"><ReactStars {...options} /> {reviewsCount}
+            <div className="Productdetailimages">
+              <NavLink
+                className="Productdetaillink"
+                to={`/Productimages/${_id}`}
+              >
+                <Slider {...settings}>
+                  {productdetails.Images.map((image, index) => (
+                    <img
+                      className="Productdetailimg"
+                      key={index}
+                      src={image.URL}
+                      alt={`Product Image ${index + 1}`}
+                    />
+                  ))}
+                </Slider>
+              </NavLink>
             </div>
-           
+            <div className="Productdetails">
+              <div className="Prouductdetailnameandrating">
+                <div className="Productdetailname">
+                  <strong>Name:</strong>
+                  {productdetails.Name}
+                </div>
+                <div className="Productdetailrating">
+                  <ReactStars {...options} /> {reviewsCount}
+                </div>
+              </div>
+              <div className="Productdescription">
+                <strong>Description:</strong> {productdetails.Description}
+              </div>
+
+              <div className="Productdetailprice">
+                <strong>Price :</strong> <FontAwesomeIcon icon={faInr} />{" "}
+                {productdetails.Price}
+              </div>
+              <div className="Cartbuttons">
+                <button onClick={AddToCart}>Add to Cart</button>
+                <button onClick={Buynow}>Buy Now</button>
+              </div>
+              <div className="Reviewbutton">
+                <button onClick={() => Reviewbutton(useref)}>
+                  Give Review
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="Productdescription">
-            <strong>Description:</strong> {productdetails.Description}
-          </div>
-          
-          <div className="Productdetailprice">
-           <strong>Price :</strong> <FontAwesomeIcon icon={faInr} /> {productdetails.Price}
-          </div>
-          <div className="Cartbuttons">
-          <button onClick={AddToCart}>Add to Cart</button>
-          <button onClick={Buynow}>Buy Now</button>
-          </div>
-         <div className="Reviewbutton">
-         <button  onClick={Reviewbutton}>Give Review</button>
-          </div>   
-        
-        </div>
-          </div>
-      
         </div>
       )}
-      {
-        showreview ?
-      <div  ref={useref}>
-       <SubmitReview onClose={()=>setshowreview(false)} productid={_id}/>
-      </div>:
-      <div className="userreviewmaindiv">
-      {reviewusers ? (
-        reviewusers.map((views, index) => (
-          <div className="userreviews" key={index}>
-            <div className="userreiviewsimgdiv">
-            <img
-              className="userreviewprofile"
-              src={views.Image}
-              alt=""
-            />
-            </div>
-           
-            <div className="userreviewname">{views.Name}</div>
-            <div className="userreviewrating">
-              <ReactStars
-                count={5}
-                value={views.Rating}
-                edit={false}
-                isHalf={true}
-                activeColor="orange"
-                color="#CCCCCC"
-                size={25}
-              />
-            </div>
-            <div className="userreviewcomment">{views.Comment}</div>
-          </div>
-        ))
+      {showreview ? (
+        <div ref={useref}>
+          <SubmitReview onClose={() => setshowreview(false)} productid={_id} />
+        </div>
       ) : (
-        <div className="noreviews">Loading.....</div>
+        <div className="userreviewmaindiv">
+          {reviewusers ? (
+            reviewusers.map((views, index) => (
+              <div className="userreviews" key={index}>
+                <div className="userreiviewsimgdiv">
+                  <img className="userreviewprofile" src={views.Image} alt="" />
+                </div>
+
+                <div className="userreviewname">{views.Name}</div>
+                <div className="userreviewrating">
+                  <ReactStars
+                    count={5}
+                    value={views.Rating}
+                    edit={false}
+                    isHalf={true}
+                    activeColor="orange"
+                    color="#CCCCCC"
+                    size={25}
+                  />
+                </div>
+                <div className="userreviewcomment">{views.Comment}</div>
+              </div>
+            ))
+          ) : (
+            <div className="noreviews">Loading.....</div>
+          )}
+        </div>
       )}
-    </div>
-        
-      }
-      
-     
     </div>
   );
 };

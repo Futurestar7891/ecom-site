@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
+const apiKey =import.meta.env.VITE_APP_URL
 export const fetchCategory = createAsyncThunk(
   'category/fetchCategory',
   async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/getcategory`);
+      const response = await fetch(`${apiKey}/getcategory`);
       const data = await response.json();
       return data.category;
       

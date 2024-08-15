@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-
+const apiKey =import.meta.env.VITE_APP_URL
 
 export const getshippingaddress = createAsyncThunk(
     "addresses/getshippingaddress",
@@ -32,7 +32,7 @@ export const getshippingaddress = createAsyncThunk(
     async ({Index,Userid}) => {
       
       try {
-        const response = await fetch("http://localhost:3000/api/updateshippingaddress",
+        const response = await fetch(`${apiKey}/updateshippingaddress`,
           {
             method: "POST",
             headers: {

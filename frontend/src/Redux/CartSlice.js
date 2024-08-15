@@ -1,113 +1,106 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+const apiKey = import.meta.env.VITE_APP_URL;
 export const addToCart = createAsyncThunk(
-  'Cartdata/addtocart',
-  async ({Cartdata,Userid}) => {
+  "Cartdata/addtocart",
+  async ({ Cartdata, Userid }) => {
     try {
-      const response = await fetch('http://localhost:3000/api/addCartproducts',{
+      const response = await fetch(`${apiKey}/addCartproducts`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            Cartdata:Cartdata,Userid:Userid
-        }
-         
-        ) 
+          Cartdata: Cartdata,
+          Userid: Userid,
+        }),
       });
       const data = await response.json();
       console.log(data.message);
-      return data.message
+      return data.message;
     } catch (error) {
-      throw Error('Failed to fetch products');
+      throw Error("Failed to fetch products");
     }
   }
 );
 
 export const deleteToCart = createAsyncThunk(
-    'Cartdata/deletetocart',
-    async ({index,Userid}) => {
-      try {
-        const response = await fetch('http://localhost:3000/api/deleteCartproducts',{
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-              index:index,Userid:Userid
-          }
-           
-          ) 
-        });
-        const data = await response.json();
-        return data.message
-      } catch (error) {
-        throw Error('Failed to fetch products');
-      }
+  "Cartdata/deletetocart",
+  async ({ index, Userid }) => {
+    try {
+      const response = await fetch(`${apiKey}/deleteCartproducts`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          index: index,
+          Userid: Userid,
+        }),
+      });
+      const data = await response.json();
+      return data.message;
+    } catch (error) {
+      throw Error("Failed to fetch products");
     }
-  );
+  }
+);
 
-  export const getFromCart = createAsyncThunk(
-    'Cartdata/getfromcart',
-    async ({Userid}) => {
-      try {
-        const response = await fetch('http://localhost:3000/api/getCartproducts',{
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            Userid:Userid
-          }
-           
-          ) 
-        });
-        const data = await response.json();
-        console.log("the data is got ",data.Cartdata)
-        return data.Cartdata
-      } catch (error) {
-        throw Error('Failed to fetch products');
-      }
+export const getFromCart = createAsyncThunk(
+  "Cartdata/getfromcart",
+  async ({ Userid }) => {
+    try {
+      const response = await fetch(`${apiKey}/getCartproducts`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Userid: Userid,
+        }),
+      });
+      const data = await response.json();
+      return data.Cartdata;
+    } catch (error) {
+      throw Error("Failed to fetch products");
     }
-  );
+  }
+);
 
-  export const updateToCart = createAsyncThunk(
-    'Cartdata/updatetocart',
-    async ({Userid,Index,Quantity}) => {
-      try {
-        const response = await fetch('http://localhost:3000/api/updatecartproducts',{
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            Userid:Userid,Index:Index,Quantity:Quantity
-          }
-           
-          ) 
-        });
-        const data = await response.json();
-        return data.message
-      } catch (error) {
-        throw Error('Failed to fetch products');
-      }
+export const updateToCart = createAsyncThunk(
+  "Cartdata/updatetocart",
+  async ({ Userid, Index, Quantity }) => {
+    try {
+      const response = await fetch(`${apiKey}/updatecartproducts`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Userid: Userid,
+          Index: Index,
+          Quantity: Quantity,
+        }),
+      });
+      const data = await response.json();
+      return data.message;
+    } catch (error) {
+      throw Error("Failed to fetch products");
     }
-  );
+  }
+);
 
 const initialState = {
   Cart: [],
-  added:"",
-  deleted:"",
+  added: "",
+  deleted: "",
   loading: false,
   error: null,
 };
 
 export const CartSlice = createSlice({
-  name: 'Cartdata',
+  name: "Cartdata",
   initialState,
-  reducers: {
-   
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(addToCart.pending, (state) => {
@@ -116,7 +109,7 @@ export const CartSlice = createSlice({
       })
       .addCase(addToCart.fulfilled, (state, action) => {
         state.loading = false;
-       state.added=action.payload
+        state.added = action.payload;
       })
       .addCase(addToCart.rejected, (state, action) => {
         state.loading = false;
@@ -128,7 +121,7 @@ export const CartSlice = createSlice({
       })
       .addCase(deleteToCart.fulfilled, (state, action) => {
         state.loading = false;
-        state.deleted=action.payload
+        state.deleted = action.payload;
       })
       .addCase(deleteToCart.rejected, (state, action) => {
         state.loading = false;
@@ -140,7 +133,7 @@ export const CartSlice = createSlice({
       })
       .addCase(getFromCart.fulfilled, (state, action) => {
         state.loading = false;
-        state.Cart=action.payload
+        state.Cart = action.payload;
       })
       .addCase(getFromCart.rejected, (state, action) => {
         state.loading = false;

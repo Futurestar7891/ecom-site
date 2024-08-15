@@ -20,57 +20,60 @@ exports.createproduct = async (req, res, next) => {
 
 exports.getallproduct = async (req, res) => {
   try {
-
-    const {page,keyword,category,minprice,maxprice,color,rating,brand,size}=req.query;
-    const limit=2;
-    console.log(page)
+    const {
+      page,
+      keyword,
+      category,
+      minprice,
+      maxprice,
+      color,
+      rating,
+      brand,
+      size,
+    } = req.query;
+    const limit = 8;
+    console.log(page);
     console.log(keyword);
-    let productfilter=new Features(Product.find(),{keyword});
-  
+    let productfilter = new Features(Product.find(), { keyword });
+
     let product = await productfilter.search();
 
-    if(category){
-      let categoryfilter = new Features(product, {category});
+    if (category) {
+      let categoryfilter = new Features(product, { category });
       product = await categoryfilter.filterByCategory();
     }
 
     if (minprice || maxprice) {
-      let pricefilter = new Features(product, { minprice,maxprice });
+      let pricefilter = new Features(product, { minprice, maxprice });
       product = await pricefilter.filterByPriceRange();
-  }
+    }
 
-  if(rating){
-       let ratingfilter=new Features(product,{rating});
-       product = await ratingfilter.filterByRating();
-  }
+    if (rating) {
+      let ratingfilter = new Features(product, { rating });
+      product = await ratingfilter.filterByRating();
+    }
 
-  if(brand){
-    let brandfilter=new Features(product,{brand});
-    product = await brandfilter.filterByBrand();
-}
+    if (brand) {
+      let brandfilter = new Features(product, { brand });
+      product = await brandfilter.filterByBrand();
+    }
 
-if(color){
-  let colorfilter=new Features(product,{color});
-  product = await colorfilter.filterByColor();
-}
-if(size){
-  let sizefilter=new Features(product,{size});
-  product = await sizefilter.filterBySize();
-}
+    if (color) {
+      let colorfilter = new Features(product, { color });
+      product = await colorfilter.filterByColor();
+    }
+    if (size) {
+      let sizefilter = new Features(product, { size });
+      product = await sizefilter.filterBySize();
+    }
 
-const totalProducts = product.length;
-const totalpages = Math.ceil(totalProducts / limit);
+    const totalProducts = product.length;
+    const totalpages = Math.ceil(totalProducts / limit);
 
-if(page){
-  let pagefilter=new Features(product,{page,limit});
-  product=await pagefilter.filterByPage();
-
-}
-
-
-
-
-
+    if (page) {
+      let pagefilter = new Features(product, { page, limit });
+      product = await pagefilter.filterByPage();
+    }
 
     res.status(200).json({
       success: true,
@@ -92,7 +95,7 @@ exports.getproductbyid = async (req, res, next) => {
     if (product) {
       return res.status(200).json({
         success: true,
-        product:product,
+        product: product,
       });
     }
     return res.status(404).json({
