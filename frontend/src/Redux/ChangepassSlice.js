@@ -1,27 +1,28 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-const apiKey =import.meta.env.VITE_APP_URL
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+// const apiKey =import.meta.env.VITE_APP_URL
 export const changepassword = createAsyncThunk(
-  'changepassword/changepassword',
-  async ({Email="",Password=""}) => {
+  "changepassword/changepassword",
+  async ({ Email = "", Password = "" }) => {
     try {
-       console.log("hello")
-       const response = await fetch(`${apiKey}/newpassword`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ Email,Password}) 
-      });
+      console.log("hello");
+      const response = await fetch(
+        `https://ecom-site-backend.vercel.app/api/newpassword`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ Email, Password }),
+        }
+      );
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       return data.success;
-     
     } catch (error) {
-      throw Error('Failed to fetch products');
+      throw Error("Failed to fetch products");
     }
   }
 );
-
 
 const initialState = {
   success: false,
@@ -30,7 +31,7 @@ const initialState = {
 };
 
 export const changepassSlice = createSlice({
-  name: 'changepassword',
+  name: "changepassword",
   initialState,
   reducers: {
     // Reducers for other actions if needed
@@ -44,7 +45,6 @@ export const changepassSlice = createSlice({
       .addCase(changepassword.fulfilled, (state, action) => {
         state.loading = false;
         state.success = action.payload;
-    
       })
       .addCase(changepassword.rejected, (state, action) => {
         state.loading = false;

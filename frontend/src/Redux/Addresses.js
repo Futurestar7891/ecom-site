@@ -1,24 +1,27 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-const apiKey = import.meta.env.VITE_APP_URL;
+// const apiKey = import.meta.env.VITE_APP_URL;
 export const createaddress = createAsyncThunk(
   "addresses/createaddress",
   async ({ Email, Name, Mobile, Altermobile, Pincode, Userid }) => {
     console.log("ented in the slice");
     try {
-      const response = await fetch(`${apiKey}/createaddress`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Email: Email,
-          Name: Name,
-          Mobile: Mobile,
-          Altermobile: Altermobile,
-          Pincode: Pincode,
-          Userid: Userid,
-        }),
-      });
+      const response = await fetch(
+        `https://ecom-site-backend.vercel.app/api/createaddress`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Email: Email,
+            Name: Name,
+            Mobile: Mobile,
+            Altermobile: Altermobile,
+            Pincode: Pincode,
+            Userid: Userid,
+          }),
+        }
+      );
       const data = await response.json();
       console.log("so the problem is here : awww", data.errors);
       return data.message;
@@ -33,15 +36,18 @@ export const getaddress = createAsyncThunk(
   async ({ Userid }) => {
     console.log("ented in the getaddress");
     try {
-      const response = await fetch(`${apiKey}/getaddress`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Userid: Userid,
-        }),
-      });
+      const response = await fetch(
+        `https://ecom-site-backend.vercel.app/api/getaddress`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Userid: Userid,
+          }),
+        }
+      );
       const data = await response.json();
       console.log("data aa gya", data.Addresses);
       return data.Addresses;
@@ -55,21 +61,24 @@ export const updateaddress = createAsyncThunk(
   "addresses/updateaddress",
   async ({ Email, Name, Mobile, Altermobile, Pincode, Userid, Index }) => {
     try {
-      const response = await fetch(`${apiKey}/updateaddress`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Email: Email,
-          Name: Name,
-          Mobile: Mobile,
-          Altermobile: Altermobile,
-          Pincode: Pincode,
-          Userid: Userid,
-          Index: Index,
-        }),
-      });
+      const response = await fetch(
+        `https://ecom-site-backend.vercel.app/api/updateaddress`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Email: Email,
+            Name: Name,
+            Mobile: Mobile,
+            Altermobile: Altermobile,
+            Pincode: Pincode,
+            Userid: Userid,
+            Index: Index,
+          }),
+        }
+      );
       const data = await response.json();
       console.log("so the problem is here : awww", data.errors);
       return data.message;
@@ -83,16 +92,19 @@ export const deleteaddress = createAsyncThunk(
   "addresses/deleteaddress",
   async ({ Index, Userid }) => {
     try {
-      const response = await fetch(`${apiKey}/deleteaddress`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Index: Index,
-          Userid: Userid,
-        }),
-      });
+      const response = await fetch(
+        `https://ecom-site-backend.vercel.app/api/deleteaddress`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Index: Index,
+            Userid: Userid,
+          }),
+        }
+      );
       const data = await response.json();
       console.log(data.message);
       return data.message;

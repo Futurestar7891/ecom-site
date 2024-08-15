@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const apiKey = import.meta.env.VITE_APP_URL;
+// const apiKey = import.meta.env.VITE_APP_URL;
 
 export const getshippingaddress = createAsyncThunk(
   "addresses/getshippingaddress",
@@ -32,16 +32,19 @@ export const updateshippingaddress = createAsyncThunk(
   "addresses/updateshippingaddress",
   async ({ Index, Userid }) => {
     try {
-      const response = await fetch(`${apiKey}/updateshippingaddress`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Index: Index,
-          Userid: Userid,
-        }),
-      });
+      const response = await fetch(
+        `https://ecom-site-backend.vercel.app/api/updateshippingaddress`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Index: Index,
+            Userid: Userid,
+          }),
+        }
+      );
       const data = await response.json();
       console.log("so the problem is here : awww", data.errors);
       console.log(data.message);
